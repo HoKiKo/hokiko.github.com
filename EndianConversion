@@ -1,0 +1,13 @@
+/* 2017-06-29 EndianConversion */
+
+void EndianConversion(char *data, int iDataSize) {                                                                                                      
+  char myCh,*myPtr;
+  myPtr = data;
+
+  int iLoop = iDataSize / 2; 
+  for (int i=0; i < iLoop; i++) {
+    myCh = myPtr[i];
+    myPtr[i] = myPtr[iDataSize-i-1];
+    myPtr[iDataSize-i-1] = myCh;
+  }
+}
